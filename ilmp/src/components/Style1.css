@@ -1,0 +1,71 @@
+body {
+    background-color: #121212;
+    display: flex;
+    justify-content: center
+  }
+  .container-css {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    height: 100vh; /* Set the height to the full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .title {
+    grid-column: 1 / 2;
+    text-align: center;
+  }
+  
+  .title h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .options {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1.5rem;
+  }
+  
+  .options > div {
+    background: var(--text-gradient);
+    background-size: 300%;
+    color: black;
+    animation: onboarding-anim 2s infinite alternate;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .options h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+  :root{
+    --text-gradient: linear-gradient(45deg, rgba(255, 2, 255, 1) 0%, rgba(187, 134, 252, 1) 30%, rgba(255, 14, 192, 1) 70%, rgba(255, 255, 255, 1) 100%,rgba(144, 1, 228, 1) 50%);
+  }
+  .text-decor{
+      background: var(--text-gradient);
+      background-size: 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: onboarding-anim 2s infinite alternate;
+  }
+  @keyframes onboarding-anim {
+    to {
+        background-position: right
+    }
+  }

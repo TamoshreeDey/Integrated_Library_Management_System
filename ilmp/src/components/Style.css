@@ -1,0 +1,85 @@
+body {
+  background-color: #121212;
+  display: flex;
+  justify-content: center
+}
+/* CSS */
+.font-bookman {
+  font-family: 'Lora', serif;
+  }
+.top-fixed {
+    position: fixed;  /* Fix the element relative to the viewport */
+    top: 0;           /* Position it at the top of the page */
+    left: 0;          /* Align to the left */
+    width: 100%;      /* Make it span the full width */
+    background-color:rgba(181, 78, 78,0.5);  /* Optional background */
+    padding: 10px;    /* Optional padding */
+    z-index: 10;      /* Ensure it appears above other elements */
+  }
+.cursive-text {
+    font-family: cursive;
+    text-align: center;
+  }
+/* Styles for top-left icons (vertical alignment) */
+.top-left-icons {
+  position: fixed; /* Fix the icons relative to the viewport */
+  top: 10px; /* Adjust the vertical position for the first icon */
+  left: 10px; /* Align to the left of the viewport */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  gap: 15px; /* Add space between the icons */
+  z-index: 20; /* Ensure icons are above other elements */
+}
+
+.top-left-icons svg {
+  cursor: pointer; /* Add a pointer cursor to indicate interactivity */
+  transition: transform 0.3s; /* Add smooth hover effect */
+}
+
+.top-left-icons svg:hover {
+  transform: scale(1.2); /* Slight zoom-in effect on hover */
+}
+.icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.icon-container::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 60px; /* Position tooltip to the right of icon */
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Show tooltip on hover */
+.icon-container:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+:root{
+  --text-gradient: linear-gradient(45deg, rgba(255, 2, 255, 1) 0%, rgba(187, 134, 252, 1) 30%, rgba(255, 14, 192, 1) 70%, rgba(255, 255, 255, 1) 100%,rgba(144, 1, 228, 1) 50%);
+}
+.text-decor{
+    background: var(--text-gradient);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: onboarding-anim 2s infinite alternate;
+}
+@keyframes onboarding-anim {
+  to {
+      background-position: right
+  }
+}
